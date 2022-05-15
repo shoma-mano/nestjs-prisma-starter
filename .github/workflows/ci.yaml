@@ -3,6 +3,7 @@ on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    container: ubuntu
     env: 
      DATABASE_URL: mysql://root:root@mysql:3306/test
     services:
