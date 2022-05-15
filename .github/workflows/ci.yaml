@@ -1,7 +1,7 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  jest:
     runs-on: ubuntu-latest
     env: 
      DATABASE_URL: mysql://root:root@127.0.0.1:3306/test
