@@ -3,12 +3,13 @@ on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
-    container: ubuntu
     env: 
-     DATABASE_URL: mysql://root:root@mysql:3306/test
+     DATABASE_URL: mysql://root:root@127.0.0.1:3306/test
     services:
           mysql:
             image: mysql:8
+            ports:
+              - 3306:3306
             env:
               MYSQL_DATABASE: test
               MYSQL_ROOT_USER: root
@@ -21,6 +22,6 @@ jobs:
           node-version: '14'
       - uses: actions/checkout@v3
       - run: npm ci
-      - run: npx prisma generate --schema /github/workspace/prisma/schema.prisma
+      - run: npx prisma generate
       - run: npm run test
 
