@@ -21,3 +21,5 @@ jobs:
       - uses: actions/checkout@v3
       - run: npm ci
       - run: npm run test
+      - run: sudo apt-get install -y mysql-client
+      - run: mysql --host mysql --port 3306 -uroot -proot -e "SHOW DATABASES"
