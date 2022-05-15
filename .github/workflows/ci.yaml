@@ -4,7 +4,7 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     env: 
-     DATABASE_URL: mysql://root:root@mysql:3306/test
+     DATABASE_URL: mysql://root:root@localhost:3306/test
     services:
           mysql:
             image: mysql:5.7
