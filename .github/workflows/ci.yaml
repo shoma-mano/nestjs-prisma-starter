@@ -1,8 +1,7 @@
-name: example-workflow
+name: learn-github-actions
 on: [push]
 jobs:
-  production-deploy:
-    if: github.repository == 'octo-org/octo-repo-prod'
+  check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -10,3 +9,4 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g bats
+      - run: bats -v
