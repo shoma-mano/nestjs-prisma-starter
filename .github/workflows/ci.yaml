@@ -4,7 +4,7 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     env: 
-     DATABASE_URL: mysql://root:root@localhost:3306/test
+     DATABASE_URL: mysql://root:root@mysql:3306/test
     services:
           mysql:
             image: mysql:5.7
@@ -16,6 +16,7 @@ jobs:
               MYSQL_ROOT_PASSWORD: root
             ports:
               - 3306:3306
+            options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
