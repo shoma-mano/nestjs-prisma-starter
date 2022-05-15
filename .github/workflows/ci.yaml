@@ -4,8 +4,6 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - env:
-        DATABASE_URL: mysql://root:root@mysql:3306/tes
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
