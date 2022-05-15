@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-        DATABASE_URL: mysql://root:root@mysql:3306/test
+        DATABASE_URL: mysql://root:root@mysql:3306/tes
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -15,7 +15,7 @@ jobs:
         - mysql:
             image: mysql:5.7
             env:
-              MYSQL_DATABASE: test
+              MYSQL_DATABASE: tes
               MYSQL_USER: user
               MYSQL_PASSWORD: password
               MYSQL_ROOT_PASSWORD: root
